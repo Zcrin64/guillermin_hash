@@ -12,7 +12,7 @@ Plus d'informations sur le wiki github : https://github.com/zCrin/guillermin_has
 */
 function guillermin_hash($chaine, callback){
 	$.post( "http://epsil0n1.tk/guillermin_hash/api.php", { hash : $chaine },function(result){
-		result = result.substring(4, (result.length - 1));
+		result = result.substring(3, (result.length - 1));
 		callback.call(this, result);
 	},'text');
 }
