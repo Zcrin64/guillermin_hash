@@ -18,7 +18,7 @@ function guillermin_hash($chaine, callback){
 }
 function guillermin_dehash($chaine, $nl, callback){
 	$.post( "http://epsil0n1.tk/guillermin_hash/api.php", { dehash : $chaine },function(result){
-		var res = result.substring(4, (result.length - 1));
+		var res = result.substring(3, (result.length - 1));
 		
 		if($nl == true){
 			res = res.replace(/<br \/>/g, '\n');
