@@ -9,6 +9,7 @@ $string = la chaîne sur laquelle effectuer la fonction
 $newLine = true ou false: retour la ligne <br /> (false) ou \n(true)
 Note : aucune donnée ne sera conservée sur nos serveurs 
 Plus d'informations sur le wiki github https://github.com/zCrin/guillermin_hash/wiki
+*/
 function guillermin_hash($chaine){
 	$chaine = file_get_contents('http://epsil0n1.tk/guillermin_hash/api.php?hash='.urlencode($chaine));
 	$chaine = substr(substr($chaine,0,-1), 3);
