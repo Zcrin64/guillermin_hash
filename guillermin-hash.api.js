@@ -13,14 +13,14 @@ Note : aucune donnée ne sera conservée sur nos serveurs
 Télécharger la version PHP de la fonction : http://epsil0n1.tk/download/guillermin_hash.zip*/
 function guillermin_hash($chaine, callback){
 	$.post( "http://epsil0n1.tk/guillermin_hash/api.php", { hash : $chaine },function(result){
-		/_(.+)_/.exec(result);
-		callback.call(this, RegExp.$1);
+		result = result.substring(4, (result.length - 1));
+		callback.call(this, result);
 	},'text');
 }
 function guillermin_dehash($chaine, $nl, callback){
 	$.post( "http://epsil0n1.tk/guillermin_hash/api.php", { dehash : $chaine },function(result){
-		/_(.+)_/.exec(result);
-		var res = RegExp.$1;
+		var res = result.substring(4, (result.length - 1));
+		
 		if($nl == true){
 			res = res.replace(/<br \/>/g, '\n');
 		}
